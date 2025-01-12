@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+:root {
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey700: hsl(0, 0%, 20%);
+  --grey800: hsl(0, 0%, 12%);
+  --grey900: hsl(0, 0%, 8%);
+
+  --fontSizeBody: 0.875rem;
+  --fontSizeHeader: 1.5rem;
+  --fontWeightBody: 400;
+  --fontWeightBold: 600;
+  --fontWeightHeader: 700;
+
+  --lineHeight: 1.5;
+  --letterSpacing: 0px;
+
+  --spacing50: 4px;
+  --spacing100: 8px;
+  --spacing150: 12px;
+  --spacing200: 16px;
+  --spacing300: 24px;
+  --spacing500: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--grey900);
+  color: var(--white);
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-size: var(--fontSizeBody);
+  font-weight: var(--fontWeightBody);
+  line-height: var(--lineHeight);
+  letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+  margin-block-end: var(--spacing50);
+  font-size: var(--fontSizeHeader);
+  font-weight: var(--fontWeightHeader);
+  line-height: var(--lineHeight);
+  letter-spacing: var(--letterSpacing);
+}
+
+main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  display: block;
+  width: 88px;
+  border-radius: 50%;
+}
+
+.card {
+  background-color: var(--grey800);
+  width: fit-content;
+  margin: var(--spacing300);
+  padding: var(--spacing500);
+  border-radius: var(--spacing150);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing300);
+  @media only screen and (max-width: 600px) {
+    padding: var(--spacing300);
+  }
+}
+
+.location {
+  color: var(--green);
+  font-weight: var(--fontWeightBold);
+}
+
+.socials-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing200);
+}
+
+.social {
+  background-color: var(--grey700);
+  padding-block: var(--spacing150);
+  border-radius: var(--spacing100);
+  color: var(--white);
+  font-weight: var(--fontWeightBold);
+  text-decoration: none;
+  transition: background-color 600ms ease-in-out, color 600ms ease-in-out;
+  &:hover,
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: var(--grey700);
+    background-color: var(--green);
+  }
+  &:focus-visible {
+    /* Not included in design, but good for accessibility */
+    outline-color: var(--white);
+    outline-offset: var(--spacing50);
+  }
+}
